@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     ListView listagem;
     List<Contatos> dados;
 
-    DBHelper db;
     ContatosDB contatosDB;
 
 
