@@ -1,5 +1,8 @@
 package com.example.listatelefonica;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class Contatos {
     private String telefone;
     private Integer id;
@@ -40,11 +43,12 @@ public class Contatos {
 
     @Override
     public String toString() {
-        return "Contatos{" +
-                "telefone='" + telefone + '\'' +
-                ", id=" + id +
-                ", datanasc='" + datanasc + '\'' +
-                ", nome='" + nome + '\'' +
-                '}';
+        try {
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
+            return nome + " " + telefone + " " + formatter.format(datanasc);
+        } catch (Exception e){
+            System.out.println(e);
+            return nome + " " + telefone + " " + datanasc;
+        }
     }
 }

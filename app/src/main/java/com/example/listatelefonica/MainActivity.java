@@ -9,6 +9,8 @@ import android.widget.ListView;
 
 import java.util.List;
 
+import banco_dados.ContatosDB;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText nome;
@@ -19,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     List<Contatos> dados;
 
     DBHelper db;
+    ContatosDB contatosDB;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
