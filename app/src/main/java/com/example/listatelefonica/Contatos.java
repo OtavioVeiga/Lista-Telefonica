@@ -10,14 +10,6 @@ public class Contatos {
     private String datanasc;
     private String nome;
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getTelefone() {
         return telefone;
     }
@@ -42,14 +34,21 @@ public class Contatos {
         this.datanasc = datanasc;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     @Override
     public String toString() {
-        try {
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd", Locale.ENGLISH);
-            return nome + " " + telefone + " " + formatter.format(datanasc);
-        } catch (Exception e){
-            System.out.println(e);
-            return nome + " " + telefone + " " + datanasc;
-        }
+        return "Contatos{" +
+                "telefone='" + telefone + '\'' +
+                ", id=" + id +
+                ", datanasc='" + datanasc + '\'' +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 }

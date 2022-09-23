@@ -13,12 +13,16 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/nome"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/phoneId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/phoneId"
@@ -27,13 +31,18 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/numero_de_telefone"
         android:inputType="phone"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/dataId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeId" />
+        app:layout_constraintTop_toBottomOf="@+id/nomeId"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/dataId"
@@ -42,46 +51,44 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="7dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:hint="@string/data_de_nascimento"
         android:inputType="date"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toTopOf="@+id/salvarId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneId" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneId"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/salvarId"
-        android:layout_width="159dp"
+        android:layout_width="0dp"
         android:layout_height="52dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/salvar"
-        app:layout_constraintEnd_toStartOf="@+id/editarId"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dataId" />
-
-    <Button
-        android:id="@+id/editarId"
-        android:layout_width="159dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="47dp"
-        android:text="@string/editar"
+        app:layout_constraintBottom_toTopOf="@+id/listagem"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dataId" />
 
     <ListView
         android:id="@+id/listagem"
-        android:layout_width="409dp"
-        android:layout_height="488dp"
+        android:layout_width="392dp"
+        android:layout_height="390dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/salvarId" />
 
