@@ -1,9 +1,18 @@
 package com.example.listatelefonica;
 
 public class Contatos {
-    String telefone;
-    Integer id;
-    String datanasc;
+    private String telefone;
+    private Integer id;
+    private String datanasc;
+    private String nome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public String getTelefone() {
         return telefone;
@@ -25,17 +34,17 @@ public class Contatos {
         return datanasc;
     }
 
-
     public void setDatanasc(String datanasc) {
         this.datanasc = datanasc;
-
     }
+
     @Override
     public String toString() {
         return "Contatos{" +
                 "telefone='" + telefone + '\'' +
                 ", id=" + id +
                 ", datanasc='" + datanasc + '\'' +
+                ", nome='" + nome + '\'' +
                 '}';
     }
 }
