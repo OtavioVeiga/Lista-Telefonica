@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     DBHelper db;
     ContatosDB contatosDB;
     Integer atualiza;
-    Integer confirma = null;
+    Integer confirma;
 
 
     @Override
@@ -102,6 +102,12 @@ public class MainActivity extends AppCompatActivity {
                         return false;
                     }
                 });
+    }
+
+    public boolean verificar(){
+        String s1 = nome.getText().toString();
+        String s2 = telefone.getText().toString();
+        String s3 = datanasc.getText().toString();
     }
 
 }
