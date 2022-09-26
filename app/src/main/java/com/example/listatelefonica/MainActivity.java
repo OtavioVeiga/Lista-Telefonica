@@ -108,6 +108,69 @@ public class MainActivity extends AppCompatActivity {
         String s1 = nome.getText().toString();
         String s2 = telefone.getText().toString();
         String s3 = datanasc.getText().toString();
+
+        if ((s1.equals("") || s2.equals(null) || s3.equals(null)) ||
+                (s1.equals("") || s2.equals("") || s3.equals(""))){
+            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    public void salvar(View view){
+        if (verificar()){
+            Contatos contatos = new Contatos();
+            if (atualiza != null){
+                contatos.setId(atualiza);
+
+                contatosDB.lista(dados);
+                Toast.makeText(this, "Salvo com Sucesso!!!", Toast.LENGTH_SHORT).show();
+            }
+
+            contatos.setNome(nome.getText().toString());
+            contatos.setTelefone(telefone.getText().toString());
+            contatos.setDatanasc(datanasc.getText().toString());
+
+            if (atualiza != null)
+                contatosDB.atualizar(contatos);
+
+            else {
+                contatosDB.inserir(contatos);
+                contatosDB.lista(dados);
+                Toast.makeText(this, "Salvo com Sucesso!!!", Toast.LENGTH_SHORT).show();
+            }
+
+            contatosDB.lista(dados);
+            listagem.invalidateViews();
+            limpar();
+            atualiza = null;
+            confirma = null;
+        }
+    }
+
+    private void limpar() {
+        nome.setText("");
+        telefone.setText("");
+        datanasc.setText("");
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (confirma != null) {
+            super.onBackPressed();
+            limpar();
+            String msgCancelar = "Edição não Realizada";
+            Toast.makeText(getApplicationContext(), msgCancelar, Toast.LENGTH_SHORT).show();
+            confirma = null;
+        }
+        else {
+            super.onBackPressed();
+            limpar();
+            String msgSair = "Saindo";
+            Toast.makeText(getApplicationContext(), msgSair, Toast.LENGTH_SHORT).show();
+        }
     }
 
 }
